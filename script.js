@@ -215,7 +215,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const contactForm = document.getElementById('contactForm');
 
     // Google Sheets Apps Script URL — Replace with YOUR deployed Apps Script URL
-    const GOOGLE_SHEETS_URL = 'YOUR_GOOGLE_SHEETS_SCRIPT_URL';
+    const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwdRcsj26ftpuA-a8xFem3Lm6T47Il7BNBVQh5Xf3b8_gzj9PAu3_YaYaEV4NhNLV9P/exec';
 
     contactForm.addEventListener('submit', async (e) => {
         e.preventDefault();
