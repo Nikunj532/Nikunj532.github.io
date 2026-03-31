@@ -211,10 +211,8 @@ document.addEventListener('DOMContentLoaded', () => {
     document.head.appendChild(particleStyle);
     createParticles();
 
-    // ---- Contact Form (Web3Forms + Google Sheets) ----
+    // ---- Contact Form (Google Sheets) ----
     const contactForm = document.getElementById('contactForm');
-
-    // Google Sheets Apps Script URL — Replace with YOUR deployed Apps Script URL
     const GOOGLE_SHEETS_URL = 'https://script.google.com/macros/s/AKfycbwdRcsj26ftpuA-a8xFem3Lm6T47Il7BNBVQh5Xf3b8_gzj9PAu3_YaYaEV4NhNLV9P/exec';
 
     contactForm.addEventListener('submit', async (e) => {
@@ -228,14 +226,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         try {
             const formData = new FormData(contactForm);
-
-            // Send to Web3Forms (email notification)
-            const web3Promise = fetch('https://api.web3forms.com/submit', {
-                method: 'POST',
-                body: formData
-            });
-
-            // Send to Google Sheets (database)
             const sheetData = {
                 name: formData.get('name'),
                 email: formData.get('email'),
@@ -244,26 +234,16 @@ document.addEventListener('DOMContentLoaded', () => {
                 timestamp: new Date().toLocaleString()
             };
 
-            const sheetsPromise = GOOGLE_SHEETS_URL !== 'YOUR_GOOGLE_SHEETS_SCRIPT_URL'
-                ? fetch(GOOGLE_SHEETS_URL, {
-                    method: 'POST',
-                    mode: 'no-cors',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify(sheetData)
-                })
-                : Promise.resolve();
+            await fetch(GOOGLE_SHEETS_URL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify(sheetData)
+            });
 
-            const [web3Response] = await Promise.all([web3Promise, sheetsPromise]);
-            const result = await web3Response.json();
-
-            if (result.success) {
-                btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
-                btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
-                contactForm.reset();
-            } else {
-                btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Failed. Try Again';
-                btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
-            }
+            btn.innerHTML = '<i class="fas fa-check"></i> Message Sent!';
+            btn.style.background = 'linear-gradient(135deg, #10b981, #059669)';
+            contactForm.reset();
         } catch (error) {
             btn.innerHTML = '<i class="fas fa-exclamation-triangle"></i> Error. Try Again';
             btn.style.background = 'linear-gradient(135deg, #ef4444, #dc2626)';
