@@ -926,6 +926,9 @@ img {
     flex-direction: column;
     position: relative;
     overflow: hidden;
+    cursor: pointer;
+    text-decoration: none;
+    color: inherit;
 }
 
 .project-card::after {
@@ -962,16 +965,14 @@ img {
     color: var(--accent-tertiary);
 }
 
-.project-links a {
+.project-links i {
     font-size: 1.3rem;
     color: var(--text-muted);
-    padding: 6px;
     transition: var(--transition);
 }
 
-.project-links a:hover {
+.project-card:hover .project-links i {
     color: var(--accent-primary);
-    transform: translateY(-2px);
 }
 
 .project-title {
