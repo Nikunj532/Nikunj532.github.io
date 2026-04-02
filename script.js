@@ -1,17 +1,44 @@
 /* ============================
    Nikunj Agarwal — Portfolio JS
+   Dark/Light Theme Edition
    ============================ */
 
 document.addEventListener('DOMContentLoaded', () => {
+
+    // ---- Theme Toggle ----
+    const themeToggle = document.getElementById('themeToggle');
+    const themeBtns = themeToggle.querySelectorAll('.theme-btn');
+    const html = document.documentElement;
+
+    // Load saved theme or default to dark
+    const savedTheme = localStorage.getItem('portfolio-theme') || 'dark';
+    html.setAttribute('data-theme', savedTheme);
+    updateThemeButtons(savedTheme);
+
+    themeBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            const theme = btn.getAttribute('data-theme');
+            html.setAttribute('data-theme', theme);
+            localStorage.setItem('portfolio-theme', theme);
+            updateThemeButtons(theme);
+        });
+    });
+
+    function updateThemeButtons(theme) {
+        themeBtns.forEach(b => {
+            b.classList.toggle('active', b.getAttribute('data-theme') === theme);
+        });
+    }
+
     // ---- Typed Text Effect ----
     const typedTextEl = document.getElementById('typedText');
     const phrases = [
-        'Data Analyst',
-        'Python Developer',
-        'SQL Expert',
-        'Power BI Developer',
-        'Dashboard Builder',
-        'Problem Solver'
+        'Power BI',
+        'SQL',
+        'Python',
+        'Excel',
+        'DAX',
+        'Data Visualization'
     ];
     let phraseIndex = 0;
     let charIndex = 0;
@@ -32,12 +59,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         if (!isDeleting && charIndex === currentPhrase.length) {
-            typingSpeed = 2000; // Pause at end
+            typingSpeed = 2000;
             isDeleting = true;
         } else if (isDeleting && charIndex === 0) {
             isDeleting = false;
             phraseIndex = (phraseIndex + 1) % phrases.length;
-            typingSpeed = 500; // Pause before next word
+            typingSpeed = 500;
         }
 
         setTimeout(typeEffect, typingSpeed);
@@ -52,21 +79,18 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('scroll', () => {
         const scrollY = window.scrollY;
 
-        // Navbar
         if (scrollY > 50) {
             navbar.classList.add('scrolled');
         } else {
             navbar.classList.remove('scrolled');
         }
 
-        // Back to top
         if (scrollY > 500) {
             backToTop.classList.add('visible');
         } else {
             backToTop.classList.remove('visible');
         }
 
-        // Active nav link
         updateActiveNavLink();
     });
 
@@ -107,7 +131,6 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.style.overflow = navLinksContainer.classList.contains('active') ? 'hidden' : '';
     });
 
-    // Close mobile nav on link click
     navLinksContainer.querySelectorAll('.nav-link').forEach(link => {
         link.addEventListener('click', () => {
             hamburger.classList.remove('active');
@@ -127,89 +150,89 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     }, {
-        threshold: 0.15,
-        rootMargin: '0px 0px -50px 0px'
+        threshold: 0.1,
+        rootMargin: '0px 0px -30px 0px'
     });
 
     revealElements.forEach(el => revealObserver.observe(el));
 
-    // ---- Skill Bars Animation ----
-    const skillBars = document.querySelectorAll('.skill-fill');
+    // ---- Skill Bottom Bar Animation ----
+    const skillBars = document.querySelectorAll('.skill-bottom-fill');
 
     const skillObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const width = entry.target.getAttribute('data-width');
-                entry.target.style.width = width + '%';
-                skillObserver.unobserve(entry.target);
+                const bar = entry.target;
+                const width = bar.getAttribute('data-width');
+                setTimeout(() => {
+                    bar.style.width = width + '%';
+                }, 200);
+                skillObserver.unobserve(bar);
             }
         });
-    }, { threshold: 0.5 });
+    }, { threshold: 0.3 });
 
     skillBars.forEach(bar => skillObserver.observe(bar));
 
-    // ---- Counter Animation ----
+    // ---- Stats Counter Animation ----
     const statNumbers = document.querySelectorAll('.stat-number');
 
     const counterObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                const target = parseInt(entry.target.getAttribute('data-target'));
-                animateCounter(entry.target, target);
-                counterObserver.unobserve(entry.target);
+                const el = entry.target;
+                const target = parseInt(el.getAttribute('data-target'));
+                animateCounter(el, target);
+                counterObserver.unobserve(el);
             }
         });
     }, { threshold: 0.5 });
 
     statNumbers.forEach(num => counterObserver.observe(num));
 
-    function animateCounter(element, target) {
+    function animateCounter(el, target) {
         let current = 0;
-        const step = target / 40;
-        const interval = setInterval(() => {
+        const duration = 1500;
+        const step = target / (duration / 30);
+
+        const timer = setInterval(() => {
             current += step;
             if (current >= target) {
-                element.textContent = target;
-                clearInterval(interval);
-            } else {
-                element.textContent = Math.floor(current);
+                current = target;
+                clearInterval(timer);
             }
-        }, 40);
+            el.textContent = Math.floor(current);
+        }, 30);
     }
 
-    // ---- Particle Background ----
-    const particlesContainer = document.getElementById('particles');
+    // ---- Project Filter Tabs ----
+    const filterBtns = document.querySelectorAll('.filter-btn');
+    const projectCards = document.querySelectorAll('.project-card');
 
-    function createParticles() {
-        for (let i = 0; i < 50; i++) {
-            const particle = document.createElement('div');
-            particle.style.cssText = `
-                position: absolute;
-                width: ${Math.random() * 3 + 1}px;
-                height: ${Math.random() * 3 + 1}px;
-                background: rgba(99, 102, 241, ${Math.random() * 0.4 + 0.1});
-                border-radius: 50%;
-                top: ${Math.random() * 100}%;
-                left: ${Math.random() * 100}%;
-                animation: particleFloat ${Math.random() * 10 + 10}s linear infinite;
-                animation-delay: ${Math.random() * 10}s;
-            `;
-            particlesContainer.appendChild(particle);
-        }
-    }
+    filterBtns.forEach(btn => {
+        btn.addEventListener('click', () => {
+            filterBtns.forEach(b => b.classList.remove('active'));
+            btn.classList.add('active');
 
-    // Add particle animation CSS
-    const particleStyle = document.createElement('style');
-    particleStyle.textContent = `
-        @keyframes particleFloat {
-            0% { transform: translateY(0) translateX(0); opacity: 0; }
-            10% { opacity: 1; }
-            90% { opacity: 1; }
-            100% { transform: translateY(-100vh) translateX(${Math.random() > 0.5 ? '' : '-'}50px); opacity: 0; }
-        }
-    `;
-    document.head.appendChild(particleStyle);
-    createParticles();
+            const filter = btn.getAttribute('data-filter');
+
+            projectCards.forEach(card => {
+                if (filter === 'all') {
+                    card.classList.remove('hidden');
+                    card.style.display = '';
+                } else {
+                    const categories = card.getAttribute('data-category');
+                    if (categories && categories.includes(filter)) {
+                        card.classList.remove('hidden');
+                        card.style.display = '';
+                    } else {
+                        card.classList.add('hidden');
+                        card.style.display = 'none';
+                    }
+                }
+            });
+        });
+    });
 
     // ---- Contact Form (Google Sheets) ----
     const contactForm = document.getElementById('contactForm');
@@ -229,7 +252,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const sheetData = {
                 name: formData.get('name'),
                 email: formData.get('email'),
-                subject: formData.get('subject'),
+                subject: 'Portfolio Contact',
                 message: formData.get('message'),
                 timestamp: new Date().toLocaleString()
             };

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="dark">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,115 +13,142 @@
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📊</text></svg>">
 </head>
 <body>
+    <!-- ==================== ANIMATED BACKGROUND ==================== -->
+    <div class="bg-orbs" aria-hidden="true">
+        <div class="orb orb-1"></div>
+        <div class="orb orb-2"></div>
+        <div class="orb orb-3"></div>
+        <div class="orb orb-4"></div>
+    </div>
+
     <!-- ==================== NAVBAR ==================== -->
     <nav class="navbar" id="navbar">
         <div class="nav-container">
             <a href="#hero" class="nav-logo">
+                <span class="nav-logo-dot"></span>
                 Nikunj Agarwal
             </a>
             <ul class="nav-links" id="navLinks">
-                <li><a href="#hero" class="nav-link active">Home</a></li>
                 <li><a href="#about" class="nav-link">About</a></li>
                 <li><a href="#skills" class="nav-link">Skills</a></li>
-                <li><a href="#internships" class="nav-link">Internships</a></li>
-                <li><a href="#simulations" class="nav-link">Simulations</a></li>
                 <li><a href="#projects" class="nav-link">Projects</a></li>
+                <li><a href="#experience" class="nav-link">Experience</a></li>
                 <li><a href="#education" class="nav-link">Education</a></li>
+                <li><a href="#certifications" class="nav-link">Certifications</a></li>
                 <li><a href="#contact" class="nav-link">Contact</a></li>
             </ul>
-            <div class="nav-socials">
-                <a href="https://github.com/Nikunj532" target="_blank" aria-label="GitHub" class="nav-social-link">
-                    <i class="fab fa-github"></i>
-                </a>
-                <a href="https://www.linkedin.com/in/nikunjagarwalji" target="_blank" aria-label="LinkedIn" class="nav-social-link">
-                    <i class="fab fa-linkedin-in"></i>
-                </a>
+            <div class="nav-right">
+                <div class="theme-toggle" id="themeToggle">
+                    <button class="theme-btn active" data-theme="light" aria-label="Light mode">
+                        <i class="fas fa-sun"></i> Light
+                    </button>
+                    <button class="theme-btn" data-theme="dark" aria-label="Dark mode">
+                        <i class="fas fa-moon"></i> Dark
+                    </button>
+                </div>
+                <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
+                    <span></span><span></span><span></span>
+                </button>
             </div>
-            <a href="assets/Nikunj_Agarwal_Resume.pdf" download class="nav-resume-btn">
-                <i class="fas fa-download"></i> Resume
-            </a>
-            <button class="hamburger" id="hamburger" aria-label="Toggle navigation">
-                <span></span><span></span><span></span>
-            </button>
         </div>
     </nav>
 
     <!-- ==================== HERO ==================== -->
     <section class="hero" id="hero">
-        <div class="hero-particles" id="particles"></div>
         <div class="hero-content">
             <div class="hero-text">
-                <p class="hero-greeting">Hello, I'm</p>
-                <h1 class="hero-name">Nikunj Agarwal</h1>
-                <div class="hero-title-wrapper">
-                    <span class="hero-title-prefix">I'm a&nbsp;</span>
+                <div class="hero-badge reveal-up">
+                    <i class="fas fa-chart-line"></i> Data Analyst Portfolio
+                </div>
+                <h1 class="hero-name reveal-up">Hi, I'm <span class="gradient-text">Nikunj Agarwal.</span></h1>
+                <p class="hero-subtitle reveal-up">Data Analyst | Python | SQL | Power BI</p>
+                <p class="hero-description reveal-up">
+                    I'm a motivated Data Science undergraduate seeking to contribute as a Data Analyst where I can apply my skills in data analysis, visualization, and problem-solving to help businesses make better decisions. I enjoy working with data – finding patterns, building dashboards, and turning numbers into stories that people can actually act on.
+                </p>
+                <div class="hero-title-wrapper reveal-up">
+                    <span class="hero-title-prefix">I build insights with&nbsp;</span>
                     <span class="typed-text" id="typedText"></span>
                     <span class="cursor">|</span>
                 </div>
-                <p class="hero-description">
-                    Turning raw data into actionable insights. I specialize in data analysis, visualization, 
-                    and building dashboards that drive smarter business decisions.
-                </p>
-                <div class="hero-cta">
-                    <a href="#projects" class="btn btn-primary">
+
+                <div class="hero-cta reveal-up">
+                    <a href="assets/Nikunj_Agarwal_Resume.pdf" download class="btn btn-green">
+                        <i class="fas fa-download"></i> View / Download CV
+                    </a>
+                    <a href="#projects" class="btn btn-blue">
                         <i class="fas fa-briefcase"></i> View Projects
                     </a>
                     <a href="#contact" class="btn btn-outline">
-                        <i class="fas fa-envelope"></i> Get in Touch
+                        <i class="fas fa-envelope"></i> Contact
                     </a>
                 </div>
-                <div class="hero-stats">
-                    <div class="stat">
-                        <span class="stat-number" data-target="4">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Projects</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="3">0</span><span class="stat-plus">+</span>
-                        <span class="stat-label">Internships</span>
-                    </div>
-                    <div class="stat">
-                        <span class="stat-number" data-target="9">0</span><span class="stat-decimal">.0</span>
-                        <span class="stat-label">CGPA</span>
-                    </div>
+
+                <div class="hero-socials reveal-up">
+                    <a href="mailto:nikunjagarwal532@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i> nikunjagarwal532@gmail.com</a>
+                    <a href="tel:+919548257079" aria-label="Phone"><i class="fas fa-phone"></i> +91 9548257079</a>
+                    <a href="https://www.linkedin.com/in/nikunjagarwalji" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i> LinkedIn</a>
+                    <a href="https://github.com/Nikunj532" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i> GitHub</a>
                 </div>
             </div>
-            <div class="hero-image">
-                <div class="image-wrapper">
-                    <div class="image-border"></div>
-                    <img src="assets/profile.jpg" alt="Nikunj Agarwal" class="profile-img" id="profileImg">
-                    <div class="image-dots"></div>
+
+            <div class="hero-profile-card reveal-right">
+                <div class="profile-img-wrapper">
+                    <img src="assets/profile.jpg" alt="Nikunj Agarwal" id="profileImg">
                 </div>
-                <div class="floating-badge badge-python">
-                    <i class="fab fa-python"></i> Python
+                <h3>Nikunj Agarwal</h3>
+                <p class="profile-tagline">Data Analyst • Power BI • SQL • Python</p>
+
+                <div class="profile-info-grid">
+                    <div class="profile-info-row">
+                        <span class="info-icon"><i class="fas fa-map-marker-alt"></i></span>
+                        <span class="info-label">Location</span>
+                        <span class="info-value">Agra, Uttar Pradesh</span>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="info-icon"><i class="fas fa-user-tie"></i></span>
+                        <span class="info-label">Role</span>
+                        <span class="info-value">Data Analyst</span>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="info-icon"><i class="fas fa-bolt"></i></span>
+                        <span class="info-label">Focus</span>
+                        <span class="info-value">Dashboards & EDA</span>
+                    </div>
+                    <div class="profile-info-row">
+                        <span class="info-icon"><i class="fas fa-bullseye"></i></span>
+                        <span class="info-label">Strength</span>
+                        <span class="info-value">KPI & Trend Analysis</span>
+                    </div>
                 </div>
-                <div class="floating-badge badge-sql">
-                    <i class="fas fa-database"></i> SQL
+
+                <div class="profile-skill-pills">
+                    <span>Data Analyst</span>
+                    <span>Power BI</span>
+                    <span>DAX</span>
+                    <span>Data Visualization</span>
+                    <span>Dashboard Development</span>
+                    <span>Business Intelligence</span>
+                    <span>SQL</span>
+                    <span>Python</span>
+                    <span>Excel</span>
                 </div>
-                <div class="floating-badge badge-powerbi">
-                    <i class="fas fa-chart-bar"></i> Power BI
+
+                <div class="profile-tagline-box">
+                    <i class="fas fa-check-circle"></i>
+                    Turning raw data into actionable insights that drive business decisions.
                 </div>
             </div>
         </div>
-        <a href="#about" class="scroll-indicator">
-            <span>Scroll Down</span>
-            <i class="fas fa-chevron-down"></i>
-        </a>
     </section>
 
     <!-- ==================== ABOUT ==================== -->
-    <section class="section about" id="about">
+    <section class="section" id="about">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">01.</span> About Me
-            </h2>
-            <div class="about-content">
-                <div class="about-image reveal-left">
-                    <div class="about-img-wrapper">
-                        <img src="assets/profile2.jpg" alt="Nikunj Agarwal" class="about-img">
-                        <div class="about-img-overlay"></div>
-                    </div>
-                </div>
-                <div class="about-text reveal-right">
+            <h2 class="section-title reveal-up">About</h2>
+
+            <div class="about-wrapper">
+                <div class="glass-card about-profile-card reveal-up">
+                    <h3><i class="fas fa-user"></i> Profile</h3>
                     <p>
                         I'm a motivated <strong>Data Science undergraduate</strong> seeking to contribute as a 
                         <strong>Data Analyst</strong> where I can apply my skills in data analysis, visualization, 
@@ -132,214 +159,154 @@
                         into stories that people can actually act on. Eager to grow in a collaborative environment 
                         and take on real-world challenges.
                     </p>
-                    <div class="about-info-grid">
-                        <div class="about-info-item">
-                            <i class="fas fa-user"></i>
-                            <span><strong>Name:</strong> Nikunj Agarwal</span>
+                    <ul>
+                        <li>Power BI dashboards (DAX, Power Query, data modeling)</li>
+                        <li>Python & SQL for data analysis and cleaning</li>
+                        <li>Excel for business reporting and ad-hoc analysis</li>
+                        <li>Cross-functional collaboration and stakeholder communication</li>
+                    </ul>
+                </div>
+
+                <div class="glass-card reveal-up">
+                    <h3 class="about-deliver-title"><i class="fas fa-rocket"></i> What I deliver</h3>
+                    <div class="deliver-grid">
+                        <div class="deliver-item">
+                            <i class="fas fa-chart-pie"></i>
+                            <div>
+                                <strong>Dashboards</strong>
+                                <span>KPI views with drill-down</span>
+                            </div>
                         </div>
-                        <div class="about-info-item">
-                            <i class="fas fa-envelope"></i>
-                            <span><strong>Email:</strong> nikunjagarwal532@gmail.com</span>
+                        <div class="deliver-item">
+                            <i class="fas fa-lightbulb"></i>
+                            <div>
+                                <strong>Insights</strong>
+                                <span>Trends, patterns & drivers</span>
+                            </div>
                         </div>
-                        <div class="about-info-item">
-                            <i class="fas fa-map-marker-alt"></i>
-                            <span><strong>Location:</strong> Agra, Uttar Pradesh</span>
+                        <div class="deliver-item">
+                            <i class="fas fa-file-alt"></i>
+                            <div>
+                                <strong>Reports</strong>
+                                <span>Automated business reporting</span>
+                            </div>
                         </div>
-                        <div class="about-info-item">
-                            <i class="fas fa-graduation-cap"></i>
-                            <span><strong>Degree:</strong> B.Tech CSE (Data Science)</span>
+                        <div class="deliver-item">
+                            <i class="fas fa-broom"></i>
+                            <div>
+                                <strong>Data Cleaning</strong>
+                                <span>ETL & transformation pipelines</span>
+                            </div>
                         </div>
                     </div>
-                    <a href="assets/Nikunj_Agarwal_Resume.pdf" download class="btn btn-primary">
-                        <i class="fas fa-download"></i> Download Resume
-                    </a>
+                </div>
+            </div>
+
+            <!-- Stats -->
+            <div class="stats-row reveal-up">
+                <div class="stat-item">
+                    <span class="stat-number" data-target="4">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">Projects</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">Certifications</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="9">0</span>
+                    <span class="stat-decimal">.0</span>
+                    <span class="stat-label">CGPA</span>
+                </div>
+                <div class="stat-item">
+                    <span class="stat-number" data-target="3">0</span>
+                    <span class="stat-plus">+</span>
+                    <span class="stat-label">Experiences</span>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== SKILLS ==================== -->
-    <section class="section skills" id="skills">
+    <section class="section" id="skills">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">02.</span> Skills & Tools
-            </h2>
-            <div class="skills-grid">
-                <!-- Languages & Libraries -->
-                <div class="skill-card reveal-up" data-category="languages">
-                    <div class="skill-icon"><i class="fab fa-python"></i></div>
-                    <h3>Python</h3>
-                    <p>Pandas, NumPy, Matplotlib</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-                </div>
-                <div class="skill-card reveal-up" data-category="languages">
-                    <div class="skill-icon"><i class="fas fa-database"></i></div>
-                    <h3>SQL (MySQL)</h3>
-                    <p>Complex Queries, Joins, CTEs</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-                </div>
-                <!-- Tools -->
-                <div class="skill-card reveal-up" data-category="tools">
-                    <div class="skill-icon"><i class="fas fa-chart-pie"></i></div>
-                    <h3>Power BI</h3>
-                    <p>Interactive Dashboards, DAX</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="88"></div></div>
-                </div>
-                <div class="skill-card reveal-up" data-category="tools">
-                    <div class="skill-icon"><i class="fas fa-file-excel"></i></div>
-                    <h3>Microsoft Excel</h3>
-                    <p>Pivot Tables, VLOOKUP, Charts</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="82"></div></div>
-                </div>
-                <div class="skill-card reveal-up" data-category="tools">
-                    <div class="skill-icon"><i class="fas fa-book-open"></i></div>
-                    <h3>Jupyter Notebook</h3>
-                    <p>Data Exploration & Analysis</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="80"></div></div>
-                </div>
-                <div class="skill-card reveal-up" data-category="tools">
-                    <div class="skill-icon"><i class="fas fa-server"></i></div>
-                    <h3>MySQL Workbench</h3>
-                    <p>Database Design & Management</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="78"></div></div>
-                </div>
-                <!-- Analytics Skills -->
-                <div class="skill-card reveal-up" data-category="analytics">
-                    <div class="skill-icon"><i class="fas fa-broom"></i></div>
-                    <h3>Data Cleaning</h3>
-                    <p>Transformation & ETL Pipelines</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="90"></div></div>
-                </div>
-                <div class="skill-card reveal-up" data-category="analytics">
-                    <div class="skill-icon"><i class="fas fa-magnifying-glass-chart"></i></div>
-                    <h3>EDA & Trend Analysis</h3>
-                    <p>Revenue Analysis, KPI Reporting</p>
-                    <div class="skill-bar"><div class="skill-fill" data-width="85"></div></div>
-                </div>
-            </div>
+            <h2 class="section-title reveal-up">Skills</h2>
 
-            <!-- Certifications -->
-            <div class="certifications reveal-up">
-                <h3 class="cert-heading"><i class="fas fa-certificate"></i> Certifications</h3>
-                <div class="cert-badges">
-                    <div class="cert-badge">
-                        <i class="fas fa-award"></i>
-                        <div>
-                            <strong>SQL (Advanced)</strong>
-                            <span>HackerRank</span>
+            <div class="skills-layout">
+                <!-- Core Skills — Card with Bottom Bar -->
+                <div class="glass-card reveal-up">
+                    <h3 class="skills-section-title"><i class="fas fa-code"></i> Core Skills</h3>
+                    <div class="core-skills-grid">
+                        <div class="skill-bar-card">
+                            <div class="skill-bar-card-icon"><i class="fas fa-chart-bar"></i></div>
+                            <h4>Power BI</h4>
+                            <p>Dashboards, DAX, Power Query</p>
+                            <div class="skill-bottom-track">
+                                <div class="skill-bottom-fill fill-green" data-width="92"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cert-badge">
-                        <i class="fas fa-award"></i>
-                        <div>
-                            <strong>Complete Data Science</strong>
-                            <span>Udemy</span>
+                        <div class="skill-bar-card">
+                            <div class="skill-bar-card-icon"><i class="fas fa-database"></i></div>
+                            <h4>SQL (MySQL)</h4>
+                            <p>Complex Queries, Joins, CTEs</p>
+                            <div class="skill-bottom-track">
+                                <div class="skill-bottom-fill fill-blue" data-width="88"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="cert-badge">
-                        <i class="fas fa-award"></i>
-                        <div>
-                            <strong>SQL 50</strong>
-                            <span>LeetCode</span>
+                        <div class="skill-bar-card">
+                            <div class="skill-bar-card-icon"><i class="fab fa-python"></i></div>
+                            <h4>Python</h4>
+                            <p>Pandas, NumPy, Matplotlib</p>
+                            <div class="skill-bottom-track">
+                                <div class="skill-bottom-fill fill-purple" data-width="83"></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== INTERNSHIPS ==================== -->
-    <section class="section experience" id="internships">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">03.</span> Internships
-            </h2>
-            <div class="timeline">
-                <!-- CopG Global -->
-                <div class="timeline-item reveal-left">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Data Analytics Intern</h3>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Jun 2025 – Jul 2025
-                            </span>
+                        <div class="skill-bar-card">
+                            <div class="skill-bar-card-icon"><i class="fas fa-file-excel"></i></div>
+                            <h4>Microsoft Excel</h4>
+                            <p>Pivot Tables, VLOOKUP, Charts</p>
+                            <div class="skill-bottom-track">
+                                <div class="skill-bottom-fill fill-teal" data-width="80"></div>
+                            </div>
                         </div>
-                        <h4 class="timeline-company">
-                            <i class="fas fa-building"></i> CopG Global Pvt. Ltd.
-                        </h4>
-                        <p>
-                            Worked on real-world datasets across the full analytics pipeline – cleaning and 
-                            preprocessing raw data, performing analysis, and building visualizations to support 
-                            internal business reporting and decision-making.
-                        </p>
-                        <div class="timeline-tags">
-                            <span>Data Cleaning</span>
-                            <span>Visualization</span>
-                            <span>Business Reporting</span>
+                        <div class="skill-bar-card">
+                            <div class="skill-bar-card-icon"><i class="fas fa-calculator"></i></div>
+                            <h4>DAX</h4>
+                            <p>Measures, Calculated Columns</p>
+                            <div class="skill-bottom-track">
+                                <div class="skill-bottom-fill fill-blue" data-width="76"></div>
+                            </div>
                         </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- ==================== JOB SIMULATIONS ==================== -->
-    <section class="section experience" id="simulations">
-        <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">04.</span> Job Simulations
-            </h2>
-            <div class="timeline">
-                <!-- Deloitte -->
-                <div class="timeline-item reveal-left">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Data Analytics Job Simulation</h3>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Jun 2025
-                            </span>
-                        </div>
-                        <h4 class="timeline-company">
-                            <i class="fas fa-building"></i> Deloitte Australia (Forage)
-                        </h4>
-                        <p>
-                            Analysed 160,704 telemetry records across 4 factories in Japan, Germany, and China. 
-                            Identified daikibo-factory-seiko as the highest-risk facility and flagged LaserWelders 
-                            and LaserCutters as the most failure-prone machine types.
-                        </p>
-                        <div class="timeline-tags">
-                            <span>Telemetry Analysis</span>
-                            <span>Risk Assessment</span>
-                            <span>Manufacturing</span>
+                        <div class="skill-bar-card">
+                            <div class="skill-bar-card-icon"><i class="fas fa-broom"></i></div>
+                            <h4>Data Cleaning &amp; EDA</h4>
+                            <p>Transformation &amp; ETL</p>
+                            <div class="skill-bottom-track">
+                                <div class="skill-bottom-fill fill-green" data-width="90"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- Tata -->
-                <div class="timeline-item reveal-right">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                        <div class="timeline-header">
-                            <h3>Data Visualisation Job Simulation</h3>
-                            <span class="timeline-date">
-                                <i class="fas fa-calendar-alt"></i> Jun 2025
-                            </span>
-                        </div>
-                        <h4 class="timeline-company">
-                            <i class="fas fa-building"></i> Tata (Forage)
-                        </h4>
-                        <p>
-                            Framed 8 strategic questions across CEO and CMO perspectives covering revenue trends, 
-                            customer retention, and marketing ROI. Built a Power BI dashboard to communicate 
-                            findings to senior leadership.
-                        </p>
-                        <div class="timeline-tags">
-                            <span>Power BI</span>
-                            <span>Strategic Thinking</span>
-                            <span>Dashboard</span>
-                        </div>
+                <!-- Toolbox -->
+                <div class="glass-card reveal-up">
+                    <h3 class="skills-section-title"><i class="fas fa-toolbox"></i> Toolbox</h3>
+                    <div class="toolbox-pills">
+                        <span>Power BI Desktop</span>
+                        <span>MySQL Workbench</span>
+                        <span>Jupyter Notebook</span>
+                        <span>Pandas</span>
+                        <span>NumPy</span>
+                        <span>Matplotlib</span>
+                        <span>Power Query</span>
+                        <span>Data Modeling</span>
+                        <span>Pivot Tables</span>
+                        <span>VLOOKUP</span>
+                        <span>KPI Analysis</span>
+                        <span>Data Visualization</span>
+                        <span>Dashboards</span>
+                        <span>Business Reporting</span>
                     </div>
                 </div>
             </div>
@@ -347,136 +314,310 @@
     </section>
 
     <!-- ==================== PROJECTS ==================== -->
-    <section class="section projects" id="projects">
+    <section class="section" id="projects">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">05.</span> Featured Projects
-            </h2>
+            <h2 class="section-title reveal-up">Projects</h2>
+
+            <div class="project-filters reveal-up">
+                <button class="filter-btn active" data-filter="all">All</button>
+                <button class="filter-btn" data-filter="powerbi">Power BI</button>
+                <button class="filter-btn" data-filter="sql">SQL</button>
+                <button class="filter-btn" data-filter="python">Python</button>
+                <button class="filter-btn" data-filter="excel">Excel</button>
+            </div>
+
             <div class="projects-grid">
                 <!-- Zepto -->
-                <a href="https://github.com/Nikunj532/Zepto-sales-dashboard" target="_blank" class="project-card reveal-up">
-                    <div class="project-card-header">
-                        <div class="project-icon"><i class="fas fa-shopping-cart"></i></div>
-                        <div class="project-links">
-                            <i class="fab fa-github"></i>
+                <div class="project-card reveal-up" data-category="powerbi sql">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <img src="assets/Zepto.png" alt="Zepto Sales Dashboard" class="project-cover">
+                            <div class="project-overlay">
+                                <h3>Zepto Sales & Demand Analytics</h3>
+                                <div class="project-tags">
+                                    <span>Power BI</span>
+                                    <span>SQL</span>
+                                    <span>Data Analysis</span>
+                                </div>
+                                <p class="project-date">Nov 2025</p>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Zepto Sales & Demand Analytics Dashboard</h3>
+                            <p class="project-desc">
+                                Analysed a catalogue of 3,700+ products across 15 categories, covering 796K units sold 
+                                and ₹2M in total revenue at a 7.6% average discount. Identified the highest revenue-driving 
+                                categories and built a 2-page interactive dashboard.
+                            </p>
+                            <div class="project-actions">
+                                <a href="https://github.com/Nikunj532/Zepto-sales-dashboard" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/posts/nikunjagarwalji_built-a-full-stack-business-intelligence-activity-7342972134043852803-g1xl?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENCuB4BvEvkJ08_uL0wulyT1_HsLZxQVh8" target="_blank" class="project-link">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="project-title">Zepto Sales & Demand Analytics Dashboard</h3>
-                    <p class="project-desc">
-                        Analysed a catalogue of 3,700+ products across 15 categories, covering 796K units sold 
-                        and ₹2M in total revenue at a 7.6% average discount. Identified the highest revenue-driving 
-                        categories and built a 2-page interactive dashboard.
-                    </p>
-                    <div class="project-tech">
-                        <span>Power BI</span>
-                        <span>SQL</span>
-                        <span>Data Analysis</span>
-                    </div>
-                    <span class="project-date">Nov 2025</span>
-                </a>
-
-                <!-- World Layoffs -->
-                <a href="https://github.com/Nikunj532/World-Layoffs-SQL" target="_blank" class="project-card reveal-up">
-                    <div class="project-card-header">
-                        <div class="project-icon"><i class="fas fa-broom"></i></div>
-                        <div class="project-links">
-                            <i class="fab fa-github"></i>
-                        </div>
-                    </div>
-                    <h3 class="project-title">World Layoffs SQL Data Cleaning</h3>
-                    <p class="project-desc">
-                        Cleaned a real-world global layoffs dataset using a structured 5-step SQL pipeline – 
-                        created a staging table, removed duplicates, standardized company names, fixed date formats, 
-                        and filled missing industry values using a self-join.
-                    </p>
-                    <div class="project-tech">
-                        <span>SQL</span>
-                        <span>MySQL</span>
-                        <span>Data Cleaning</span>
-                    </div>
-                    <span class="project-date">Mar 2025</span>
-                </a>
+                </div>
 
                 <!-- Earthquake -->
-                <a href="https://github.com/Nikunj532/global-earthquake-analytics-2001-2022" target="_blank" class="project-card reveal-up">
-                    <div class="project-card-header">
-                        <div class="project-icon"><i class="fas fa-earth-americas"></i></div>
-                        <div class="project-links">
-                            <i class="fab fa-github"></i>
+                <div class="project-card reveal-up" data-category="powerbi python">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <img src="assets/earthquack.png" alt="Earthquake Analysis Dashboard" class="project-cover">
+                            <div class="project-overlay">
+                                <h3>Global Earthquake Risk & Trend Analysis</h3>
+                                <div class="project-tags">
+                                    <span>Power BI</span>
+                                    <span>Python</span>
+                                    <span>EDA</span>
+                                </div>
+                                <p class="project-date">Nov 2025</p>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Global Earthquake Risk & Trend Analysis</h3>
+                            <p class="project-desc">
+                                Analysed 20 years of global earthquake data (775 records) to identify 4 high-risk 
+                                geographic zones and uncover trends in earthquake frequency and severity over time. 
+                                Presented findings through an interactive Power BI dashboard.
+                            </p>
+                            <div class="project-actions">
+                                <a href="https://github.com/Nikunj532/global-earthquake-analytics-2001-2022" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/feed/update/urn:li:activity:7445403995348725760/?originTrackingId=%2FMS9Fu0OEwcU8DkxEx8ohA%3D%3D" target="_blank" class="project-link">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="project-title">Global Earthquake Risk & Trend Analysis</h3>
-                    <p class="project-desc">
-                        Analysed 20 years of global earthquake data (775 records) to identify 4 high-risk 
-                        geographic zones and uncover trends in earthquake frequency and severity over time. 
-                        Presented findings through an interactive Power BI dashboard.
-                    </p>
-                    <div class="project-tech">
-                        <span>Power BI</span>
-                        <span>Python</span>
-                        <span>EDA</span>
+                </div>
+
+                <!-- World Layoffs -->
+                <div class="project-card reveal-up" data-category="sql">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <img src="assets/world_layoffs.png" alt="World Layoffs Data Cleaning" class="project-cover">
+                            <div class="project-overlay">
+                                <h3>World Layoffs SQL Data Cleaning</h3>
+                                <div class="project-tags">
+                                    <span>SQL</span>
+                                    <span>MySQL</span>
+                                    <span>Data Cleaning</span>
+                                </div>
+                                <p class="project-date">Mar 2025</p>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>World Layoffs SQL Data Cleaning</h3>
+                            <p class="project-desc">
+                                Cleaned a real-world global layoffs dataset using a structured 5-step SQL pipeline – 
+                                created a staging table, removed duplicates, standardized company names, fixed date formats, 
+                                and filled missing industry values using a self-join.
+                            </p>
+                            <div class="project-actions">
+                                <a href="https://github.com/Nikunj532/World-Layoffs-SQL" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/posts/nikunjagarwalji_datacleaning-mysql-sql-activity-7319318820467163136-VbP-?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENCuB4BvEvkJ08_uL0wulyT1_HsLZxQVh8" target="_blank" class="project-link">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>
+                        </div>
                     </div>
-                    <span class="project-date">Nov 2025</span>
-                </a>
+                </div>
 
                 <!-- Retail Sales -->
-                <a href="https://github.com/Nikunj532/retail-sales-business-analysis" target="_blank" class="project-card reveal-up">
-                    <div class="project-card-header">
-                        <div class="project-icon"><i class="fas fa-chart-line"></i></div>
-                        <div class="project-links">
-                            <i class="fab fa-github"></i>
+                <div class="project-card reveal-up" data-category="sql excel">
+                    <div class="project-card-inner">
+                        <div class="project-card-front">
+                            <img src="assets/1_Retail-Sales-Business-Analysis.png" alt="Retail Sales Analysis" class="project-cover">
+                            <div class="project-overlay">
+                                <h3>Retail Sales Business Analysis</h3>
+                                <div class="project-tags">
+                                    <span>SQL</span>
+                                    <span>Excel</span>
+                                    <span>Business Analysis</span>
+                                </div>
+                                <p class="project-date">Mar 2026</p>
+                            </div>
+                        </div>
+                        <div class="project-card-back">
+                            <h3>Retail Sales Business Analysis</h3>
+                            <p class="project-desc">
+                                Analysed retail transaction data for Wayne Inc. (NY & LA) to improve profit margins. 
+                                Identified top 5 multi-store customers for a targeted 10% discount campaign, confirmed 
+                                TV campaign boosted revenue, and flagged Store LA_333 as a low-risk closure candidate.
+                            </p>
+                            <div class="project-actions">
+                                <a href="https://github.com/Nikunj532/retail-sales-business-analysis" target="_blank" class="project-link">
+                                    <i class="fab fa-github"></i> GitHub
+                                </a>
+                                <a href="https://www.linkedin.com/posts/nikunjagarwalji_dataanalytics-python-businessanalytics-activity-7437614050840252416-FpaI?utm_source=share&utm_medium=member_desktop&rcm=ACoAAENCuB4BvEvkJ08_uL0wulyT1_HsLZxQVh8" target="_blank" class="project-link">
+                                    <i class="fab fa-linkedin-in"></i> LinkedIn
+                                </a>
+                            </div>
                         </div>
                     </div>
-                    <h3 class="project-title">Retail Sales Business Analysis</h3>
-                    <p class="project-desc">
-                        Analysed retail transaction data for Wayne Inc. (NY & LA) to improve profit margins. 
-                        Identified top 5 multi-store customers for a targeted 10% discount campaign, confirmed 
-                        TV campaign boosted revenue, and flagged Store LA_333 as a low-risk closure candidate.
-                    </p>
-                    <div class="project-tech">
-                        <span>SQL</span>
-                        <span>Excel</span>
-                        <span>Business Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== EXPERIENCE ==================== -->
+    <section class="section" id="experience">
+        <div class="container">
+            <h2 class="section-title reveal-up">Experience</h2>
+
+            <!-- Internships Sub-section -->
+            <div class="exp-subsection reveal-up">
+                <h3 class="exp-subsection-title">
+                    <span class="subsection-icon"><i class="fas fa-building"></i></span>
+                    Internships
+                </h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h4>Data Analytics Intern</h4>
+                                <span class="timeline-company-date">CopG Global Pvt. Ltd. • Jun 2025 – Jul 2025</span>
+                            </div>
+                            <ul>
+                                <li>Worked on real-world datasets across the full analytics pipeline</li>
+                                <li>Cleaning and preprocessing raw data for analysis</li>
+                                <li>Built visualizations to support internal business reporting and decision-making</li>
+                            </ul>
+                            <p class="timeline-tools"><i class="fas fa-wrench"></i> Tools: Python, SQL, Power BI, Excel</p>
+                        </div>
                     </div>
-                    <span class="project-date">Mar 2026</span>
-                </a>
+                </div>
+            </div>
+
+            <!-- Job Simulations Sub-section -->
+            <div class="exp-subsection reveal-up">
+                <h3 class="exp-subsection-title">
+                    <span class="subsection-icon"><i class="fas fa-laptop-code"></i></span>
+                    Job Simulations
+                </h3>
+                <div class="timeline">
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h4>Data Analytics Job Simulation</h4>
+                                <span class="timeline-company-date">Deloitte Australia (Forage) • Jun 2025</span>
+                            </div>
+                            <ul>
+                                <li>Analysed 160,704 telemetry records across 4 factories in Japan, Germany, and China</li>
+                                <li>Identified daikibo-factory-seiko as the highest-risk facility</li>
+                                <li>Flagged LaserWelders and LaserCutters as the most failure-prone machine types</li>
+                            </ul>
+                            <p class="timeline-tools"><i class="fas fa-wrench"></i> Tools: Data Analysis, Risk Assessment, Manufacturing Analytics</p>
+                        </div>
+                    </div>
+
+                    <div class="timeline-item">
+                        <div class="timeline-dot"></div>
+                        <div class="timeline-card">
+                            <div class="timeline-card-header">
+                                <h4>Data Visualisation Job Simulation</h4>
+                                <span class="timeline-company-date">Tata (Forage) • Jun 2025</span>
+                            </div>
+                            <ul>
+                                <li>Framed 8 strategic questions across CEO and CMO perspectives</li>
+                                <li>Covered revenue trends, customer retention, and marketing ROI</li>
+                                <li>Built a Power BI dashboard to communicate findings to senior leadership</li>
+                            </ul>
+                            <p class="timeline-tools"><i class="fas fa-wrench"></i> Tools: Power BI, Strategic Thinking, Dashboard Design</p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- ==================== EDUCATION ==================== -->
-    <section class="section education" id="education">
+    <section class="section" id="education">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">06.</span> Education
-            </h2>
+            <h2 class="section-title reveal-up">Education</h2>
+
             <div class="education-cards">
-                <div class="edu-card reveal-left">
-                    <div class="edu-icon"><i class="fas fa-university"></i></div>
-                    <div class="edu-details">
+                <!-- B.Tech Card -->
+                <div class="edu-card reveal-up">
+                    <div class="edu-card-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <div class="edu-card-content">
                         <h3>B.Tech in Computer Science Engineering</h3>
-                        <h4>Specialization: Data Science</h4>
-                        <p class="edu-institute">
-                            <i class="fas fa-map-marker-alt"></i> Swami Keshwanand Institute of Technology, Jaipur
-                        </p>
+                        <p class="edu-specialization">Specialization: Data Science</p>
+                        <p class="edu-institution">Swami Keshwanand Institute of Technology, Jaipur</p>
                         <div class="edu-meta">
-                            <span class="edu-year"><i class="fas fa-calendar"></i> 2023 – Present</span>
-                            <span class="edu-grade"><i class="fas fa-star"></i> CGPA: 9.0</span>
+                            <span><i class="fas fa-calendar"></i> 2023 – Present</span>
+                            <span><i class="fas fa-star"></i> CGPA: 9.0</span>
                         </div>
                     </div>
                 </div>
-                <div class="edu-card reveal-right">
-                    <div class="edu-icon"><i class="fas fa-school"></i></div>
-                    <div class="edu-details">
-                        <h3>Senior Secondary (Class XII)</h3>
-                        <h4>CBSE Board</h4>
-                        <p class="edu-institute">
-                            <i class="fas fa-map-marker-alt"></i> Agra, Uttar Pradesh
-                        </p>
-                        <div class="edu-meta">
-                            <span class="edu-year"><i class="fas fa-calendar"></i> 2022</span>
-                            <span class="edu-grade"><i class="fas fa-star"></i> Percentage: 90.4%</span>
+
+                <!-- Schooling Card -->
+                <div class="edu-card reveal-up">
+                    <div class="edu-card-icon">
+                        <i class="fas fa-school"></i>
+                    </div>
+                    <div class="edu-card-content">
+                        <h3>Schooling</h3>
+                        <div class="schooling-items">
+                            <div class="schooling-entry">
+                                <p class="school-level">Senior Secondary (Class XII) — CBSE Board</p>
+                                <p class="school-location">Agra, Uttar Pradesh</p>
+                                <div class="edu-meta">
+                                    <span><i class="fas fa-calendar"></i> 2022</span>
+                                    <span><i class="fas fa-star"></i> Percentage: 90.4%</span>
+                                </div>
+                            </div>
+                            <hr class="schooling-divider">
+                            <div class="schooling-entry">
+                                <p class="school-level">Secondary (Class X) — CBSE Board</p>
+                                <p class="school-location">Agra, Uttar Pradesh</p>
+                                <div class="edu-meta">
+                                    <span><i class="fas fa-calendar"></i> 2020</span>
+                                    <span><i class="fas fa-star"></i> Percentage: 95%</span>
+                                </div>
+                            </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CERTIFICATIONS ==================== -->
+    <section class="section" id="certifications">
+        <div class="container">
+            <h2 class="section-title reveal-up">Certifications</h2>
+
+            <div class="cert-cards">
+                <div class="cert-card reveal-up">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div>
+                        <h4>SQL (Advanced)</h4>
+                        <p>HackerRank</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal-up">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div>
+                        <h4>Complete Data Science Bootcamp</h4>
+                        <p>Udemy</p>
+                    </div>
+                </div>
+                <div class="cert-card reveal-up">
+                    <div class="cert-icon"><i class="fas fa-certificate"></i></div>
+                    <div>
+                        <h4>SQL 50</h4>
+                        <p>LeetCode</p>
                     </div>
                 </div>
             </div>
@@ -484,70 +625,52 @@
     </section>
 
     <!-- ==================== CONTACT ==================== -->
-    <section class="section contact" id="contact">
+    <section class="section" id="contact">
         <div class="container">
-            <h2 class="section-title">
-                <span class="title-number">07.</span> Get In Touch
-            </h2>
-            <div class="contact-wrapper">
-                <div class="contact-info reveal-left">
-                    <h3>Let's connect!</h3>
-                    <p>
-                        I'm actively looking for Data Analyst opportunities. Whether you have a question, 
-                        a project idea, or just want to say hello — my inbox is always open!
-                    </p>
-                    <div class="contact-details">
-                        <a href="mailto:nikunjagarwal532@gmail.com" class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-envelope"></i></div>
-                            <div>
-                                <strong>Email</strong>
-                                <span>nikunjagarwal532@gmail.com</span>
-                            </div>
+            <h2 class="section-title reveal-up">Contact</h2>
+            <p class="contact-intro reveal-up">I'm actively looking for Data Analyst opportunities. Whether you have a question, a project idea, or just want to say hello — my inbox is always open!</p>
+
+            <div class="contact-grid">
+                <!-- Quick Contact -->
+                <div class="glass-card quick-contact reveal-left">
+                    <h3><i class="fas fa-address-book"></i> Quick contact</h3>
+                    <div class="contact-links">
+                        <a href="mailto:nikunjagarwal532@gmail.com" class="contact-link-item">
+                            <i class="fas fa-envelope"></i> nikunjagarwal532@gmail.com
                         </a>
-                        <a href="tel:+919548257079" class="contact-item">
-                            <div class="contact-icon"><i class="fas fa-phone"></i></div>
-                            <div>
-                                <strong>Phone</strong>
-                                <span>+91 9548257079</span>
-                            </div>
+                        <a href="tel:+919548257079" class="contact-link-item">
+                            <i class="fas fa-phone"></i> +91 9548257079
                         </a>
-                        <a href="https://www.linkedin.com/in/nikunjagarwalji" target="_blank" class="contact-item">
-                            <div class="contact-icon"><i class="fab fa-linkedin-in"></i></div>
-                            <div>
-                                <strong>LinkedIn</strong>
-                                <span>nikunjagarwalji</span>
-                            </div>
+                        <a href="https://www.linkedin.com/in/nikunjagarwalji" target="_blank" class="contact-link-item">
+                            <i class="fab fa-linkedin-in"></i> LinkedIn
                         </a>
-                        <a href="https://github.com/Nikunj532" target="_blank" class="contact-item">
-                            <div class="contact-icon"><i class="fab fa-github"></i></div>
-                            <div>
-                                <strong>GitHub</strong>
-                                <span>Nikunj532</span>
-                            </div>
+                        <a href="https://github.com/Nikunj532" target="_blank" class="contact-link-item">
+                            <i class="fab fa-github"></i> GitHub
                         </a>
                     </div>
+                    <p class="contact-location"><i class="fas fa-map-marker-alt"></i> Location: Agra, Uttar Pradesh, India</p>
                 </div>
-                <form class="contact-form reveal-right" id="contactForm">
-                    <div class="form-group">
-                        <input type="text" id="name" name="name" placeholder=" " required>
-                        <label for="name">Your Name</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="email" id="email" name="email" placeholder=" " required>
-                        <label for="email">Your Email</label>
-                    </div>
-                    <div class="form-group">
-                        <input type="text" id="subject" name="subject" placeholder=" " required>
-                        <label for="subject">Subject</label>
-                    </div>
-                    <div class="form-group">
-                        <textarea id="message" name="message" rows="5" placeholder=" " required></textarea>
-                        <label for="message">Message</label>
-                    </div>
-                    <button type="submit" class="btn btn-primary btn-submit">
-                        <i class="fas fa-paper-plane"></i> Send Message
-                    </button>
-                </form>
+
+                <!-- Message Form -->
+                <div class="glass-card message-form-card reveal-right">
+                    <h3><i class="fas fa-paper-plane"></i> Message form</h3>
+                    <form id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <input type="text" name="name" placeholder="Your Name" required>
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" placeholder="Your Email" required>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
+                        </div>
+                        <button type="submit" class="btn-submit">
+                            <i class="fas fa-paper-plane"></i> Send Message
+                        </button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -556,23 +679,18 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <div class="footer-logo">
-                    Nikunj Agarwal
-                </div>
+                <p class="footer-copy">&copy; 2026 Nikunj Agarwal &bull; Data Analyst</p>
                 <div class="footer-socials">
-                    <a href="https://github.com/Nikunj532" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
-                    <a href="https://www.linkedin.com/in/nikunjagarwalji" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
                     <a href="mailto:nikunjagarwal532@gmail.com" aria-label="Email"><i class="fas fa-envelope"></i></a>
+                    <a href="https://www.linkedin.com/in/nikunjagarwalji" target="_blank" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/Nikunj532" target="_blank" aria-label="GitHub"><i class="fab fa-github"></i></a>
                 </div>
-                <p class="footer-copy">&copy; 2026 Nikunj Agarwal. All rights reserved.</p>
+                <button class="back-to-top" id="backToTop" aria-label="Back to top">
+                    <i class="fas fa-arrow-up"></i>
+                </button>
             </div>
         </div>
     </footer>
-
-    <!-- Back to top -->
-    <button class="back-to-top" id="backToTop" aria-label="Back to top">
-        <i class="fas fa-arrow-up"></i>
-    </button>
 
     <script src="script.js"></script>
 </body>
