@@ -1048,38 +1048,7 @@ img {
 /* ============================
    Projects Section — Flip Cards
    ============================ */
-.project-filters {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 10px;
-    margin-bottom: 40px;
-}
 
-.filter-btn {
-    padding: 8px 20px;
-    border: 1.5px solid var(--border-glass);
-    border-radius: 25px;
-    font-size: 0.85rem;
-    font-weight: 500;
-    color: var(--text-secondary);
-    background: var(--bg-glass);
-    backdrop-filter: blur(4px);
-    cursor: pointer;
-    transition: var(--transition);
-    font-family: var(--font-body);
-}
-
-.filter-btn:hover {
-    border-color: var(--accent-blue);
-    color: var(--accent-blue);
-}
-
-.filter-btn.active {
-    background: var(--accent-gradient);
-    color: white;
-    border-color: transparent;
-    box-shadow: 0 4px 15px var(--accent-glow);
-}
 
 /* Projects Grid */
 .projects-grid {

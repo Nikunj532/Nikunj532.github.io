@@ -205,34 +205,7 @@ document.addEventListener('DOMContentLoaded', () => {
         }, 30);
     }
 
-    // ---- Project Filter Tabs ----
-    const filterBtns = document.querySelectorAll('.filter-btn');
-    const projectCards = document.querySelectorAll('.project-card');
 
-    filterBtns.forEach(btn => {
-        btn.addEventListener('click', () => {
-            filterBtns.forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-
-            const filter = btn.getAttribute('data-filter');
-
-            projectCards.forEach(card => {
-                if (filter === 'all') {
-                    card.classList.remove('hidden');
-                    card.style.display = '';
-                } else {
-                    const categories = card.getAttribute('data-category');
-                    if (categories && categories.includes(filter)) {
-                        card.classList.remove('hidden');
-                        card.style.display = '';
-                    } else {
-                        card.classList.add('hidden');
-                        card.style.display = 'none';
-                    }
-                }
-            });
-        });
-    });
 
     // ---- Contact Form (Google Sheets) ----
     const contactForm = document.getElementById('contactForm');
