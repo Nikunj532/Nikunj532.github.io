@@ -1795,7 +1795,6 @@ img {
         flex: 0 0 auto;
         max-width: 380px;
         width: 100%;
-        order: -1;
     }
 
     .about-wrapper {
@@ -1922,6 +1921,15 @@ img {
     }
 
     .theme-toggle {
+        display: flex;
+        padding: 2px;
+    }
+
+    .theme-btn {
+        padding: 6px 10px;
+    }
+
+    .theme-btn span {
         display: none;
     }
 }
