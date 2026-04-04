@@ -102,6 +102,7 @@
 html {
     scroll-behavior: smooth;
     scroll-padding-top: 80px;
+    overflow-x: hidden;
 }
 
 body {
@@ -109,6 +110,7 @@ body {
     color: var(--text-primary);
     line-height: 1.7;
     overflow-x: hidden;
+    width: 100%;
     -webkit-font-smoothing: antialiased;
     background: var(--bg-primary);
     transition: background 0.4s ease, color 0.4s ease;
@@ -238,6 +240,7 @@ img {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    width: 100%;
 }
 
 .nav-logo {
@@ -1866,7 +1869,15 @@ img {
 
 @media (max-width: 640px) {
     :root {
-        --section-padding: 70px 0;
+        --section-padding: 60px 0;
+    }
+
+    .nav-container {
+        padding: 0 16px;
+    }
+
+    .nav-logo {
+        font-size: 1.15rem;
     }
 
     .hero {
@@ -1923,10 +1934,12 @@ img {
     .theme-toggle {
         display: flex;
         padding: 2px;
+        margin-right: 8px;
     }
 
     .theme-btn {
-        padding: 6px 10px;
+        padding: 6px;
+        gap: 0;
     }
 
     .theme-btn span {
